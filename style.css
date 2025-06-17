@@ -1,0 +1,320 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Staatliches&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  padding-inline: 2rem;
+  background-color: #fff;
+  font-family: "Mulish", sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+.navbar {
+  position: absolute;
+  height: 60px;
+  z-index: 20;
+  width: calc(100% - 4rem);
+  left: 2rem;
+  margin-inline: auto;
+  opacity: 0;
+  transition: opacity 0.5s ease-out 1s;
+  top: 1.25rem;
+}
+
+.is-animating .navbar {
+  opacity: 1;
+}
+
+.navbar__container {
+  width: 50%;
+  margin-left: auto;
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.navbar .navbar__links {
+  display: flex;
+  font-weight: 500;
+  gap: 30px;
+}
+
+.navbar .navbar__icons {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar__icons .navbar__icon:last-child {
+  padding-left: 20px;
+  border-left: 2px solid black;
+}
+
+.oudies__logo {
+  position: absolute;
+  height: 50px;
+  transition: all 1s ease-out;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(3);
+}
+
+.is-animating .oudies__logo {
+  left: 2rem;
+  top: calc(1.25rem + 5px);
+  transform: translate(0, 0) scale(1);
+}
+
+/* Second Section */
+
+.hero {
+  padding-top: 160px;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.hero__image {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform-origin: center bottom;
+  transform: translateX(-50%) scale(0.8);
+  opacity: 0;
+  z-index: 10;
+  transition: all 0.3s ease-out 1.3s;
+}
+.is-animating .hero__image {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+}
+
+.hero .hero__title__box {
+  width: 100%;
+  font-family: "Staatliches", sans-serif;
+  position: relative;
+  overflow: hidden;
+  font-size: 151px;
+}
+
+.hero .hero__title__box .hero__title__animation {
+  line-height: 1;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: #f00;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-out 1s;
+}
+
+.hero .hero__title__box:nth-child(2) .hero__title__animation {
+  transition: transform 0.3s ease-out 1.3s;
+}
+
+.is-animating .hero .hero__title__box .hero__title__animation {
+  transform: translateY(0);
+}
+
+.hero__title__image {
+  position: absolute;
+  -webkit-mask-image: linear-gradient(135deg, black 0%, black 100%);
+  mask-image: linear-gradient(135deg, black 0%, black 100%);
+  -webkit-mask-size: 0% 100%;
+  mask-size: 0% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  transition: -webkit-mask-size 0.5s ease-out, mask-size 0.5s ease-out;
+}
+
+/* Trigger this class to reveal */
+.is-animating .hero__title__image {
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.hero .hero__title__box .hero__image__first {
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: auto;
+  transition-delay: 1.5s;
+}
+.hero .hero__title__box .hero__image__second {
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  height: auto;
+  transform: translateY(-20%);
+  transition-delay: 2s;
+}
+
+/* Collection */
+
+.collection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Staatliches", sans-serif;
+  flex-grow: 1;
+}
+
+.collection__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  position: relative;
+  min-width: 208px;
+  padding-left: 20px;
+  transition: opacity 0.3s ease-out 2s;
+  opacity: 0;
+}
+.is-animating .collection__header {
+  opacity: 1;
+}
+
+.collection__header-icon {
+  position: absolute;
+  left: 0;
+  height: 180%;
+  background: red;
+  z-index: -1;
+  transform-origin: left center;
+  width: 5%;
+  transition: width 0.3s ease-out;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: width 0.3s ease-out 2.3s;
+}
+.is-animating .collection__header-icon {
+  width: 32%;
+}
+
+.collection__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.collection__badge {
+  font-size: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.collection__badge-text {
+  transform: translateY(100%);
+  transition: transform 0.3s ease-out 1.6s;
+}
+.is-animating .collection__badge-text {
+  transform: translateY(0);
+}
+
+.collection__badge-image {
+  position: absolute;
+  width: 30%;
+  object-fit: cover;
+  top: 0%;
+  -webkit-mask-image: linear-gradient(135deg, black 0%, black 100%);
+  mask-image: linear-gradient(135deg, black 0%, black 100%);
+  -webkit-mask-size: 0% 100%;
+  mask-size: 0% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  transition: -webkit-mask-size 0.5s ease-out, mask-size 0.5s ease-out;
+  transition-delay: 2.3s;
+}
+
+.is-animating .collection__badge-image {
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.collection__items {
+  display: flex;
+  gap: 20px;
+  max-width: 360px;
+  position: relative;
+  padding-right: 25px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease-out 1.6s;
+}
+
+.is-animating .collection__items {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.collection__item {
+  border: 1px solid black;
+  position: relative;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.collection__item-price {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+  background-color: black;
+  color: white;
+}
+.collection__item-title {
+  border-top: 1px solid black;
+  padding: 5px 5px;
+  text-align: center;
+}
+
+.collection__item-image {
+  max-width: 153px;
+  width: 100%;
+  height: auto;
+}
+
+.collection__controls {
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  width: 120%;
+  height: fit-content;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  background: transparent;
+  opacity: 0;
+  transition: opacity 0.3s ease-out 1.8s;
+}
+.is-animating .collection__controls {
+  opacity: 1;
+}
+
+.collection__arrow {
+  background-color: transparent;
+  border: none;
+}
+
+.collection__arrow-icon {
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
+}
+.collection__controls .collection__arrow:nth-child(1) .collection__arrow-icon {
+  transform: rotate(180deg);
+  opacity: 0;
+  pointer-events: none;
+}
