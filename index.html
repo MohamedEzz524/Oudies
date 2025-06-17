@@ -137,6 +137,10 @@
 
   <script>
     (function () {
+      document.documentElement.classList.remove("is-animating");
+
+      void document.documentElement.offsetWidth;
+
       document.documentElement.classList.add("is-animating");
 
       const fallbackTimer = setTimeout(() => {
